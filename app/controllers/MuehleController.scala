@@ -18,6 +18,10 @@ class MuehleController @Inject()(cc: ControllerComponents) extends AbstractContr
     Ok(muehleAsText)
   }
 
+  def game = Action {
+    Ok(views.html.muehle(gameController))
+  }
+
   def place(pos:Int) = Action {
     gameController.placeStone(pos)
     Ok(muehleAsText)

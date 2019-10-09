@@ -6,6 +6,8 @@
 
 GET     /                           controllers.MuehleController.muehle
 
+GET     /start                      controllers.MuehleController.game
+
 GET     /about                      controllers.MuehleController.about
 
 GET     /new                        controllers.MuehleController.restart
