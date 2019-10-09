@@ -8,7 +8,7 @@ import de.htwg.se.muehle.Muehle
 @Singleton
 class MuehleController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
   val gameController = Muehle.controller
-  def muehleAsText =  gameController.toString
+  def muehleAsText =  gameController.status + "\n" + gameController.gridToString
 
   def about= Action {
     Ok(views.html.index())
@@ -18,4 +18,13 @@ class MuehleController @Inject()(cc: ControllerComponents) extends AbstractContr
     Ok(muehleAsText)
   }
 
+  def place(pos:Int) = Action {
+    gameController.placeStone(pos)
+    Ok(muehleAsText)
+  }
+
+  def restart = Action {
+    gameController.newGame
+    Ok(muehleAsText)
+  }
 }
