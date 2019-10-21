@@ -1,7 +1,50 @@
-@(controller:de.htwg.se.muehle.controller.controllerComponent.IController)
+@(controller: de.htwg.se.muehle.controller.controllerComponent.IController)
 
-@main("HTWG Muehle") {
-    <p>
-        TODO!!!
-    </p>
+@grid = @{controller.gridToString}
+@status = @{controller.status}
+
+@main("HTWG WT Muehle") {
+    <div align="left">
+        <br>
+        <form action="/new">
+            <input type="submit" value="Start new game" />
+        </form>
+        <form action="/undo">
+            <input type="submit" value="Undo" />
+        </form>
+        <form action="/redo">
+            <input type="submit" value="Redo" />
+        </form>
+    </div>
+
+    <div align="center" class="game">
+        @{status + '\n' + grid}
+    </div>
+
+    <div align="center">
+        <br>
+        <form action="/game/0">
+            <input align="left" type="submit" value="Place Stone at 1" />
+        </form>
+        <form action="/game/1">
+            <input align="right" type="submit" value="Place Stone at 2" />
+        </form>
+        <form action="/game/2">
+            <input align="right" type="submit" value="Place Stone at 3" />
+        </form>
+        <form action="/game/3">
+            <input align="right" type="submit" value="Place Stone at 4" />
+        </form>
+        <form action="/game/4">
+            <input align="right" type="submit" value="Place Stone at 5" />
+        </form>
+        <form action="/game/5">
+            <input align="right" type="submit" value="Place Stone at 6" />
+        </form>
+    </div>
+
+    <div align="left">
+        <br>
+        <a class="btn" href="/">Go Back to Homepage</a>
+    </div>
 }
