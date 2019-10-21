@@ -4,15 +4,13 @@
 
 # Controller for Sudoku
 
-GET     /                           controllers.MuehleController.muehle
+GET     /                          controllers.MuehleController.about
 
-GET     /start                      controllers.MuehleController.game
+GET     /start                     controllers.MuehleController.muehle
 
-GET     /about                      controllers.MuehleController.about
+GET     /new                       controllers.MuehleController.restart
 
-GET     /new                        controllers.MuehleController.restart
-
-GET     /:field                     controllers.MuehleController.place(field: Int)
+GET     /:field                    controllers.MuehleController.place(field: Int)
 
 
 # Map static resources from the /public folder to the /assets URL path
