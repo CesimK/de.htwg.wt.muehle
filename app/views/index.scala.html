@@ -1,43 +1,49 @@
 @()
 
-    @main("HTWG Muehle") {
+@main("HTWG Muehle") {
 
-        <h1>HTWG WT Muehle</h1>
+    <h1>HTWG WT Muehle</h1>
 
-        <p>
-            Welcome to our project 'Muehle (Nine Man Morris)' in the lecture 'Webtechnologies'! In order to start the game, click the link below.
-        </p>
+    <p>
+        Welcome to our project 'Muehle (Nine Man Morris)' in the lecture 'Webtechnologies'! In order to start the game, click the button below.
+    </p>
 
-        <a class="btn btn-success" href="/game">Start Game</a>
+    <div align="center">
+        <form action="/game">
+            <input type="submit" value="Start HTWG WT Muhle" />
+        </form>
+    </div>
 
-        <p>
-            The board consists of a grid with twenty-four intersections or points. Each player has nine pieces,
-            or "men", usually coloured black and white. Players try to form 'mills'—three of their own men lined
-            horizontally or vertically—allowing a player to remove an opponent's man from the game. <br>
+    <h2>Rules</h2>
+    <p>
+        The board consists of a grid with twenty-four intersections or points. Each player has nine pieces,
+        or "men", usually coloured black and white. Players try to form 'mills'—three of their own men lined
+        horizontally or vertically—allowing a player to remove an opponent's man from the game. <br>
 
-            A player wins by reducing
-            the opponent to two pieces (where they could no longer form mills and thus be unable to win), or by leaving
-            them without a legal move.
-        </p>
+        A player wins by reducing
+        the opponent to two pieces (where they could no longer form mills and thus be unable to win), or by leaving
+        them without a legal move.
+    </p>
 
-        <p>
-            The game proceeds in three phases:
+    <p>
+        The game proceeds in three phases:
 
-            <br> 1. Placing men on vacant points
-            <br> 2. Moving men to adjacent points
-            <br> 3. (optional phase) Moving men to any vacant point when the player has been reduced to three men
-        </p>
+        <br> 1. Placing men on vacant points
+        <br> 2. Moving men to adjacent points
+        <br> 3. (optional phase) Moving men to any vacant point when the player has been reduced to three men
+    </p>
 
-        <p>
-            This is a Project developed for the lecture Web Technologies. Goal of this lecture is it, to create a fully working Web-Application,
-            of our previously developed game (from the lecture Software Engineering):
-        </p>
+    <h2>This Project</h2>
+    <p>
+        This is a Project developed for the lecture Web Technologies. Goal of this lecture is it, to create a fully working Web-Application,
+        of our previously developed game (from the lecture Software Engineering):
+    </p>
 
-        <a class="btn btn-success" href="https://github.com/CesimK/de.htwg.se.muehle" target="_blank">SE Muehle</a>
+    <a class="btn btn-success" href="https://github.com/CesimK/de.htwg.se.muehle" target="_blank">SE Muehle</a>
 
-        <p>To see the current progress of this project, consider visiting the Repository below:</p>
+    <p>To see the current progress of this project, consider visiting the Repository below:</p>
 
-        <a class="btn btn-success" href="https://github.com/CesimK/de.htwg.wt.muehle" target="_blank">WT Muehle</a>
+    <a class="btn btn-success" href="https://github.com/CesimK/de.htwg.wt.muehle" target="_blank">WT Muehle</a>
 
 
-    }
+}
