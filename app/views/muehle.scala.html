@@ -1,8 +1,7 @@
 @(controller: de.htwg.se.muehle.controller.controllerComponent.IController)
 
     @grid = @{
-        controller.status + "\n" +
-                controller.gridToString
+        controller.gridToString
     }
 
     @status = @{
@@ -31,37 +30,37 @@
             </div>
             <div align="center">
                 <span>
-                @grid.slice(0, 15)
+                @grid.slice(0, 13)
                 </span>
             </div>
             <div align="center">
                 <span>
-                @grid.slice(16, 30)
+                @grid.slice(14, 27)
                 </span>
             </div>
             <div align="center">
                 <span>
-                @grid.slice(30, 43)
+                @grid.slice(28, 41)
                 </span>
             </div>
             <div align="center">
                 <span>
-                @grid.slice(42, 60)
+                @grid.slice(42, 55)
                 </span>
             </div>
             <div align="center">
                 <span>
-                @grid.slice(58, 72)
+                @grid.slice(56, 69)
                 </span>
             </div>
             <div align="center">
                 <span>
-                @grid.slice(72, 86)
+                @grid.slice(70, 83)
                 </span>
             </div>
             <div align="center">
                 <span>
-                @grid.slice(86, 102)
+                @grid.slice(84, 97)
                 </span>
             </div>
         </div>
