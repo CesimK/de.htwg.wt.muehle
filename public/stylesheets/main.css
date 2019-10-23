@@ -4,11 +4,46 @@ h1 {
 }
 
 .gamecontainer {
+    text-align: center;
     height: 100%;
     margin: 1em;
+    padding: 0.5em;
+    display: inline-block;
     background: #CBB24D;
     font-family: Consolas;
-    font-size: 20px;
+    font-size: 40px;
     color: black;
+    border: 3px solid black;
+}
 
+.container {
+    text-align: center;
+}
+.gamecontainer div {
+    text-align: center;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.nav-home {
+    text-align: left;
+}
+
+.commands {
+    text-align: center;
+}
+.command {
+    display: inline-block;
+    margin: 0.5em 9em;
+}
+
+.row {
+    display: inline-block;
+    margin: 0.5em;
+}
+.buttons input {
+    text-align: center;
+    width: 10em;
 }
