@@ -3,6 +3,13 @@ h1 {
     font-size: 60px;
 }
 
+h2 {
+    margin-left: auto;
+    font-size: 30px;
+}
+.main-header {
+    background: khaki;
+}
 .gamecontainer {
     height: 100%;
     margin: 1em;
@@ -20,7 +27,7 @@ h1 {
 
 .navigation-bar {
     align-items: center;
-    border-bottom: 1px solid gray;
+    border-bottom: 2px solid gray;
 }
 
 a:link {
@@ -104,4 +111,8 @@ a.button3{
 }
 a.button3:hover{
     background-color:#4095c6;
+}
+
+.center {
+    text-align: center;
 }
