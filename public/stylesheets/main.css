@@ -7,8 +7,19 @@ h2 {
     margin-left: auto;
     font-size: 30px;
 }
+
+.imagesBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    z-index: -100;
+    opacity: 50%;
+}
+
 .main-header {
-    background: khaki;
+    color: black;
+    background: lightgray;
 }
 .gamecontainer {
     text-align: center;
@@ -85,6 +96,10 @@ a:active {
     color: lightskyblue;
 }
 
+a.activelink {
+    color: cornflowerblue;
+}
+
 .navigation-bar-item {
     text-decoration-color: gray;
     font-family: "Bahnschrift";
@@ -95,6 +110,14 @@ a:active {
     font-weight: 400;
 }
 
+a.animation {
+    text-decoration: none;
+    color: #ffffff;
+}
+a.animation:hover {
+    text-decoration: none;
+    color: #121416;
+}
 
 a.button1{
     display:inline-block;
@@ -174,4 +197,53 @@ input.button2{
 input.button2:hover{
     color:#FFFFFF;
     background-color:#4eb5f1;
+}
+.box {
+    justify-content: center;
+    display: flex;
+}
+
+.box .inner {
+    width: 400px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 4em;
+    font-family: sans-serif;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.box .inner:first-child {
+    background-color: cornflowerblue;
+    color: darkred;
+    transform-origin: right;
+    transform: perspective(100px) rotateY(-15deg);
+}
+
+.box .inner:last-child {
+    background-color: lightskyblue;
+    color: antiquewhite;
+    transform-origin: left;
+    transform: perspective(100px) rotateY(15deg);
+}
+
+.box .inner span {
+    position: absolute;
+    animation: marquee 5s linear infinite;
+}
+
+.box .inner:first-child span {
+    animation-delay: 2.5s;
+    left: -100%;
+}
+
+@keyframes marquee {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: -100%;
+    }
 }
