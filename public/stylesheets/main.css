@@ -22,15 +22,11 @@ h2 {
     background: lightgray;
 }
 .gamecontainer {
-    text-align: center;
-    height: 100%;
-    margin: 1em;
-    padding: 0.5em;
+    background: gray;
     display: inline-block;
-    background: #CBB24D;
     font-family: Consolas;
     font-size: 40px;
-    color: black;
+    color: white;
     border: 3px solid black;
 }
 
