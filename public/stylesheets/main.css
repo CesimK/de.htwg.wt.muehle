@@ -37,6 +37,9 @@ h2 {
     text-align: center;
 }
 
+.grid {
+    cursor: pointer
+}
 .commands {
     text-align: center;
 }
