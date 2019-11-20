@@ -20,7 +20,9 @@ GET        /undo                    controllers.MuehleController.undo
 
 GET        /redo                    controllers.MuehleController.redo
 
-GET     /json                       controllers.MuehleController.toJson
+GET        /json                    controllers.MuehleController.toJson
+
+GET        /websocket               controllers.MuehleController.socket
 
 
 # Map static resources from the /public folder to the /assets URL path

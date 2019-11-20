@@ -1,4 +1,5 @@
 let csrf = $('input[name="csrfToken"]').attr("name");
+let json;
 
 $.ajaxSetup({
     headers: {
@@ -7,6 +8,14 @@ $.ajaxSetup({
         //'Accept': 'application/json'
     }
 });
+
+//TODO:FIX THAT SHIT
+function updateGrid() {
+    let x = $(event.target);
+    console.log(x);
+    // $(`#field${i + 1}`).html(json.controller.grid.filled.charAt(i));
+
+}
 
 function place(i) {
     const field = $(`#field${i + 1}`);
@@ -17,7 +26,6 @@ function place(i) {
                 url: '/game/' + i,
                 dataType: "json",
             });
-            window.location.href = '/game';
         })
     } else {
         throw Error('Selected Field is unavailable');
@@ -36,7 +44,6 @@ function move(i,j) {
                     dataType: "json",
                 });
             });
-            window.location.href = '/game';
         })
     }
 }
@@ -50,7 +57,6 @@ function remove(i) {
                 url: '/remove/' + i,
                 dataType: "json",
             });
-            window.location.href = '/game';
         })
     } else {
         throw Error('Field doesn\' contain removable stone');
@@ -64,7 +70,6 @@ function init_Buttons() {
             url: '/new',
             dataType: "json",
         });
-        window.location.href = '/game';
     });
 
     $(`#undo`).click(function () {
@@ -73,7 +78,6 @@ function init_Buttons() {
             url: '/undo',
             dataType: "json",
         });
-        window.location.href = '/game';
     });
 
     $(`#redo`).click(function () {
@@ -82,7 +86,6 @@ function init_Buttons() {
             url: '/redo',
             dataType: "json",
         });
-        window.location.href = '/game';
     })
 }
 
@@ -113,6 +116,36 @@ function init_Game() {
     })
 }
 
+function connectWebSocket() {
+    const websocket = new WebSocket("ws://localhost:9000/websocket");
+    websocket.setTimeout;
+
+    websocket.onopen = function(event) {
+        console.log("Connected to Websocket");
+    };
+
+    websocket.onclose = function () {
+        console.log('Connection with Websocket Closed!');
+    };
+
+    websocket.onerror = function (error) {
+        console.log('Error in Websocket occurred: ' + error);
+    };
+
+    websocket.onmessage = function (e) {
+        if (typeof e.data === "string") {
+            json = JSON.parse(e.data);
+            updateGrid();
+            for (let i = 1; i <= 24; i++) {
+                $(`field${i}`).clickEvent = place(i-1);
+            }
+            init_Buttons()
+        }
+
+    };
+}
+
 $(document).ready(function () {
     loadJson();
+    connectWebSocket();
 }) ;
