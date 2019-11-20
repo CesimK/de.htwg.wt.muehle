@@ -23,6 +23,16 @@ class MuehleController @Inject()(cc: ControllerComponents) extends AbstractContr
     Ok(views.html.muehle(gameController))
   }
 
+  def move(pos1:Int, pos2:Int) = Action {
+    gameController.moveStone(pos1, pos2)
+    Ok(views.html.muehle(gameController))
+  }
+
+  def remove(pos:Int) = Action {
+    gameController.removeStone(pos)
+    Ok(views.html.muehle(gameController))
+  }
+
   def newGame = Action {
     gameController.newGame
     Ok(views.html.muehle(gameController))
@@ -37,4 +47,8 @@ class MuehleController @Inject()(cc: ControllerComponents) extends AbstractContr
     gameController.redo
     Ok(views.html.muehle(gameController))
   }
+
+//  def toJson = Action {
+//    Ok(gameController.gridToJson)
+//  }
 }
