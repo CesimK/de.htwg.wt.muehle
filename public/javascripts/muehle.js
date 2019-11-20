@@ -86,7 +86,6 @@ function init_Buttons() {
     })
 }
 
-//doesn't function correctly!
 //TODO: SE Project needs Rework! ToJson is not available through controller!
 function loadJson() {
     $.ajax({
@@ -94,7 +93,10 @@ function loadJson() {
         url: "/json",
         dataType: "json",
 
-        error: function () {
+        success: function () {
+            for (let i = 1; i <= 24; i++) {
+                $(`field${i}`).clickEvent = place(i-1);
+            }
             init_Buttons()
         }
     })
@@ -113,9 +115,4 @@ function init_Game() {
 
 $(document).ready(function () {
     loadJson();
-    for (i = 1; i <= 24; i++) {
-        $(`field${i}`).clickEvent = place(i-1);
-    }
-    //init_Game()
-    //init_Buttons();
 }) ;

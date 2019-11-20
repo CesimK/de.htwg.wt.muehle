@@ -3,11 +3,13 @@ package controllers
 import javax.inject._
 import play.api.mvc._
 import de.htwg.se.muehle.Muehle
+import de.htwg.se.muehle.model.fileIOImpl.jsonImpl.FileIO
 
 
 @Singleton
-class MuehleController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
+class MuehleController @Inject()(cc: ControllerComponents)(fileIO: FileIO) extends AbstractController(cc) {
   val gameController = Muehle.controller
+  val fromJson = fileIO.controllerToJson(gameController)
   def muehleAsText =  gameController.status + "\n" + gameController.gridToString
 
   def about= Action {
@@ -30,6 +32,7 @@ class MuehleController @Inject()(cc: ControllerComponents) extends AbstractContr
 
   def remove(pos:Int) = Action {
     gameController.removeStone(pos)
+    gameController.saveGame()
     Ok(views.html.muehle(gameController))
   }
 
@@ -48,7 +51,7 @@ class MuehleController @Inject()(cc: ControllerComponents) extends AbstractContr
     Ok(views.html.muehle(gameController))
   }
 
-//  def toJson = Action {
-//    Ok(gameController.gridToJson)
-//  }
+  def toJson = Action {
+    Ok(fromJson)
+  }
 }
