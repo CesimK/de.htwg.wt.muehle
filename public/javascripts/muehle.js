@@ -1,6 +1,15 @@
 let csrf = $('input[name="csrfToken"]').attr("name");
 let json;
 
+setTimeout(function () {
+    $('.loaded_after_5sec').show();
+}, 5000);
+
+setTimeout(function () {
+    $('.loading').hide();
+}, 5000);
+
+
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': csrf,
@@ -148,4 +157,6 @@ function connectWebSocket() {
 $(document).ready(function () {
     loadJson();
     connectWebSocket();
+    $(".loading").show();
+    $(".loaded_after_5sec").hide();
 }) ;
