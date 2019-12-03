@@ -18,12 +18,8 @@ $.ajaxSetup({
     }
 });
 
-//TODO:FIX THAT SHIT
 function updateGrid() {
-    let x = $(event.target);
-    console.log(x);
-    // $(`#field${i + 1}`).html(json.controller.grid.filled.charAt(i));
-
+    window.location.href = '/game'
 }
 
 function place(i) {

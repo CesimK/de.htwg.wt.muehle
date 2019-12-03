@@ -85,7 +85,6 @@ class MuehleController @Inject()(cc: ControllerComponents)(fileIO: FileIO) (impl
     def receive = {
       case msg: String =>
         out ! (fromJson.toString())
-        println("Sent Json to Client", msg)
     }
 
     reactions += {
@@ -96,9 +95,7 @@ class MuehleController @Inject()(cc: ControllerComponents)(fileIO: FileIO) (impl
     }
 
     def sendJsonToClient = {
-      println("Received event from Controller")
       out ! (fromJson.toString())
-//      println(fromJson.toString())
     }
   }
 }
