@@ -9,12 +9,12 @@ h2 {
 }
 
 .imagesBackground {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: fit-content;
     z-index: -100;
-    opacity: 50%;
+    opacity: 100%;
 }
 
 .main-header {

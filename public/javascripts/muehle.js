@@ -3,11 +3,11 @@ let json;
 
 setTimeout(function () {
     $('.loaded_after_5sec').show();
-}, 5000);
+}, 4000);
 
 setTimeout(function () {
     $('.loading').hide();
-}, 5000);
+}, 4000);
 
 
 $.ajaxSetup({
