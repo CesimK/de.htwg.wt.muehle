@@ -2,6 +2,7 @@
 
 @main("HTWG Muehle") {
     <div class="main-header">
+        <canvas id="canvas"></canvas>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand mr-auto" href="/">HTWG WT Muehle</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,15 +31,7 @@
             </div>
         </nav>
     </div>
-
-    <div class="textarea">
-        <p class="text-center">
-            <strong>
-                Welcome to our project 'Muehle (Nine Man Morris)' in the lecture 'Webtechnologies'! In order to start the game, click the button below.
-            </strong>
-        </p>
-    </div>
-
+    <div class="row mt-5"></div>
     <div class="box-loading align-content-center">
     <div class="loading wrapper">
         <div class="line line1">
@@ -155,26 +148,13 @@
     </div>
 
     <div class="loaded_after_5sec">
-        <div class="box align-content-center">
-            <div class="inner">
-                <span>
-                    <a class="animation" href="/game">
-                        Start Game
-                    </a>
-                </span>
+            <div id="wrapper">
+                <a href="/game" class="my-super-cool-btn">
+                    <span>PLAY</span>
+                </a>
             </div>
-            <div class="inner">
-                <span>
-                    <a class="animation" href="/game">
-                        Start Game</a>
-                </span>
-            </div>
-        </div>
     </div>
-    @* <div class="center">*@
-    @* <a href="/game" class="button3">Start Game</a>*@
-    @* </div>*@
-    <div id="rules">
+    <div id="rules" class="col mt-2">
         <h2>Rules</h2>
         <div class="textarea text-justify">
             <p class="col-1"></p>
@@ -201,14 +181,14 @@
     </div>
 
     <span class="row mt-1"></span>
-    <div id="history">
+    <div id="history" class="col">
         <h2>History</h2>
         <div class="textarea text-justify">
             <p class="col-1"></p>
             <p class="ml-4 mr-4">
                 Nine Men’s Morris is an ancient game, popular in Ancient Rome and the medieval period. No one really knows
                 where and when the game originated. The oldest building that has a Nine Men’s Morris board carved into its
-                stones is an Egyptian temple at Kurna, Egypt, which dates to roughly 1400 BCE.<
+                stones is an Egyptian temple at Kurna, Egypt, which dates to roughly 1400 BCE.
                 However, it is not known when the game board itself was carved into the Kurna temple’sroofing slabs;
                 was it at the time of the construction or much later in history. There are many Nine Men’s Morris carved into various buildings’ stones through out
                 the Roman Empire and in the seats of many medieval cathedrals.
@@ -219,6 +199,12 @@
             </p>
         </div>
     </div>
-
+    <div class="row mt-5"></div>
+    <div class="text-center d-inline-flex">
+        <a class="btn-slice" href="/yeet">
+            <div class="top"><span>Unnecessary Button</span></div>
+            <div class="bottom"><span>Unnecessary Button</span></div>
+        </a>
+    </div>
     <img class="imagesBackground" src=@routes.Assets.versioned("images/Website-Background-Web.jpg")>
 }

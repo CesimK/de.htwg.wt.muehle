@@ -8,6 +8,8 @@ GET        /                        controllers.MuehleController.about
 
 GET        /game                    controllers.MuehleController.muehle
 
+GET        /yeet                    controllers.MuehleController.easterEgg
+
 GET        /new                     controllers.MuehleController.newGame
 
 GET        /game/:field             controllers.MuehleController.place(field: Int)

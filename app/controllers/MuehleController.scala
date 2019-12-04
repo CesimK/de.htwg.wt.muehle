@@ -22,6 +22,10 @@ class MuehleController @Inject()(cc: ControllerComponents)(fileIO: FileIO) (impl
     Ok(views.html.index())
   }
 
+  def easterEgg= Action {
+    Ok(views.html.easterEgg())
+  }
+
   def muehle = Action {
     Ok(views.html.muehle(gameController))
   }
