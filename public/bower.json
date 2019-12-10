@@ -1,0 +1,20 @@
+{
+  "name": "de.htwg.wt.muehle",
+  "description": "",
+  "main": "main.scala.html",
+  "authors": [
+    "Christopher Gogl & Cesim Keskin"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/CesimK/de.htwg.wt.muehle",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "2.0.0"
+  }
+}
