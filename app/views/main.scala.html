@@ -23,9 +23,11 @@
     <body>
         @* And here's where we render the `Html` object containing
         * the page content. *@
-        @content
         <script src="@routes.Assets.versioned("javascripts/jquery-3.2.1.min.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/popper.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/bootstrap.min.js")" ></script>
+        @content
         <script src="@routes.Assets.versioned("javascripts/muehle.js")"></script>
     </body>
 </html>
+y
