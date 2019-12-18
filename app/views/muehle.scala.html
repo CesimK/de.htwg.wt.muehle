@@ -12,30 +12,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
     <script src="@routes.Assets.versioned("javascripts/muehleVue.js")" ></script>
     <div class="main-header">
-        <div id="muehle-game">
+        <div id="navigation-bar">
             <nav-bar></nav-bar>
         </div>
     </div>
-    <div>
-        <br>
-        <div class="text-center">
-            <a id="start_game" href="" class="btn btn-outline-dark">Start new game</a>
-        </div>
-        <div class="row mt-2"></div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="text-center">
-                    <a id="undo" href="" class="btn btn-outline-dark" >Undo</a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="text-center">
-                    <a id="redo" href="" class="btn btn-outline-dark">Redo</a>
-                </div>
-            </div>
-        </div>
+    <div id="muehle-app-controls">
+        <game-controls></game-controls>
     </div>
+
     <div class="row mt-4"></div>
+    <div id="muehle-app">
+        <game></game>
+    </div>
+    <!---
     <div class="row">
         <div class="col col-xs-12">
             <div class="col-md-12 mt-2">
@@ -209,4 +198,5 @@
             </div>
         </div>
     </div>
+    --->
 }
