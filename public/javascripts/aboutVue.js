@@ -7,11 +7,15 @@ $(document).ready(function () {
         el: '#startgame'
     });
 
+    var totallyUseful = new Vue({
+        el: '#very-useful-button'
+    })
+
 });
 
 Vue.component('rules', {
     template: `
-    <div id="rules">
+    <div id="rules" class="col mt-2">
         <h2>Rules</h2>
         <div class="textarea text-justify">
             <p class="col-1"></p>
@@ -38,14 +42,14 @@ Vue.component('rules', {
     </div>
 
     <span class="row mt-1"></span>
-    <div id="history">
+    <div id="history" class="col">
         <h2>History</h2>
         <div class="textarea text-justify">
             <p class="col-1"></p>
             <p class="ml-4 mr-4">
                 Nine Men’s Morris is an ancient game, popular in Ancient Rome and the medieval period. No one really knows
                 where and when the game originated. The oldest building that has a Nine Men’s Morris board carved into its
-                stones is an Egyptian temple at Kurna, Egypt, which dates to roughly 1400 BCE.<
+                stones is an Egyptian temple at Kurna, Egypt, which dates to roughly 1400 BCE.
                 However, it is not known when the game board itself was carved into the Kurna temple’sroofing slabs;
                 was it at the time of the construction or much later in history. There are many Nine Men’s Morris carved into various buildings’ stones through out
                 the Roman Empire and in the seats of many medieval cathedrals.
@@ -59,8 +63,8 @@ Vue.component('rules', {
 })
 
 Vue.component('start-game', {
-    template:`
-    <div class="box-loading align-content-center">
+    template: `
+     <div class="box-loading align-content-center">
     <div class="loading wrapper">
         <div class="line line1">
             <span class="circle circle-top"></span>
@@ -176,20 +180,20 @@ Vue.component('start-game', {
     </div>
 
     <div class="loaded_after_5sec">
-        <div class="box align-content-center">
-            <div class="inner">
-                <span>
-                    <a class="animation" href="/game">
-                        Start Game
-                    </a>
-                </span>
+            <div id="wrapper">
+                <a href="/game" class="my-super-cool-btn">
+                    <span>PLAY</span>
+                </a>
             </div>
-            <div class="inner">
-                <span>
-                    <a class="animation" href="/game">
-                        Start Game</a>
-                </span>
-            </div>
-        </div>
     </div>`
 });
+
+Vue.component('necessary-button', {
+    template: `
+    <div class="text-center d-inline-flex">
+        <a class="btn-slice" href="/yeet">
+            <div class="top"><span>Unnecessary Button</span></div>
+            <div class="bottom"><span>Unnecessary Button</span></div>
+        </a>
+    </div>`
+})

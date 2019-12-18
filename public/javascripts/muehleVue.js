@@ -47,19 +47,23 @@ Vue.component('game-controls', {
     template: `
     <div>
         <br>
-        <div class="text-center">
-            <a id="start_game" href="" class="btn btn-outline-dark">Start new game</a>
+        <div class="row">
+            <div class="col mr-5 ml-5">
+                <div class="text-center">
+                    <a id="start_game" href="" class="btn btn-outline-light">Start new game</a>
+                </div>
+            </div>
         </div>
         <div class="row mt-2"></div>
-        <div class="row">
+        <div class="row  mr-5 ml-5">
             <div class="col-md-6">
                 <div class="text-center">
-                    <a id="undo" href="" class="btn btn-outline-dark" >Undo</a>
+                    <a id="undo" href="" class="btn btn-outline-light" >Undo</a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="text-center">
-                    <a id="redo" href="" class="btn btn-outline-dark">Redo</a>
+                    <a id="redo" href="" class="btn btn-outline-light">Redo</a>
                 </div>
             </div>
         </div>
@@ -67,7 +71,11 @@ Vue.component('game-controls', {
 });
 
 Vue.component('game', {
-    template:`
+    template: `
+    <div class="row">
+        <div class="col col-xs-12">
+            <div class="col-md-12 mt-2">
+                <div class="gamecontainer col-md-12">
     <div class="text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="640" height="640">
                             <defs><path d="M50 50L600 50L600 600L50 600L50 50Z" id="aSYM0slrQ"/>
@@ -104,5 +112,185 @@ Vue.component('game', {
                                 <path d="M325.22 474.18L325.22 445.82L325.22 474.18Z" id="a13r4Oy3pA"/><path d="M325.22 572.99L325.22 525.97L325.22 572.99Z" id="aCHJCjBC7"/>
                             </defs>
                             <g><g><g><use xlink:href="#aSYM0slrQ" opacity="1" fill="#505050" fill-opacity="0.73"/><g><use xlink:href="#aSYM0slrQ" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#hTwplD2sO" opacity="1" fill="#000000" fill-opacity="0"/><g><use xlink:href="#hTwplD2sO" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#acj2spAYE" opacity="1" fill="#000000" fill-opacity="0"/><g><use xlink:href="#acj2spAYE" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#l6DnU6HXv" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#l6DnU6HXv" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#b2ErXBqKt7" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#b2ErXBqKt7" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#a4uE0zCMG1" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#a4uE0zCMG1" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#c4w1PI0rF0" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#c4w1PI0rF0" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#a1yjNcWntD" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#a1yjNcWntD" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#at1eUckaJ" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#at1eUckaJ" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#b91vujT6U" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#b91vujT6U" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#a3F3KwHv3" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#a3F3KwHv3" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#aBsc56hJb" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#aBsc56hJb" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#bjmGZa1Ib" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#bjmGZa1Ib" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#ac612WGkb" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#ac612WGkb" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#pkZsA1YHB" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#pkZsA1YHB" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#cjafwvEdr" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#cjafwvEdr" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#a1eXdGbnm4" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#a1eXdGbnm4" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#aQVFMIor" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#aQVFMIor" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#a2Oq3DfxDB" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#a2Oq3DfxDB" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#a3o9XKplJH" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#a3o9XKplJH" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#dnRyXiNWR" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#dnRyXiNWR" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#a5DRjITAUa" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#a5DRjITAUa" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#d1ukEKrwVB" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#d1ukEKrwVB" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#bg0iCMDOH" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#bg0iCMDOH" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#fk1nTDyFq" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#fk1nTDyFq" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#cdmdmtNZw" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#cdmdmtNZw" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#hqKdDdo1c" opacity="1" fill="#ffffff" fill-opacity="1"/><g><use xlink:href="#hqKdDdo1c" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#bYs2185wB" opacity="1" fill="#000000" fill-opacity="1"/><g><use xlink:href="#bYs2185wB" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#dCPTNzVgc" opacity="1" fill="#000000" fill-opacity="1"/><g><use xlink:href="#dCPTNzVgc" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><g><use xlink:href="#a5JuIHiSqO" opacity="1" fill-opacity="0" stroke="#402d8f" stroke-width="1" stroke-opacity="1"/></g></g><g><g><use xlink:href="#aqsQ3PJAm" opacity="1" fill-opacity="0" stroke="#08070b" stroke-width="1" stroke-opacity="1"/></g></g><g><g><use xlink:href="#aqfw3H4Hz" opacity="1" fill-opacity="0" stroke="#08070b" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#a5jJxfprh0" opacity="1" fill="#000000" fill-opacity="1"/><g><use xlink:href="#a5jJxfprh0" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#bbkdlhqHC" opacity="1" fill="#000000" fill-opacity="1"/><g><use xlink:href="#bbkdlhqHC" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#a13r4Oy3pA" opacity="1" fill="#000000" fill-opacity="1"/><g><use xlink:href="#a13r4Oy3pA" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g><g><use xlink:href="#aCHJCjBC7" opacity="1" fill="#000000" fill-opacity="1"/><g><use xlink:href="#aCHJCjBC7" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="1"/></g></g></g></g></svg>
-                    </div>`
+                    </div>
+            </div>
+        </div>
+    </div>`
 });
+
+// Vue.component('game', {
+//     template:`
+//     <div class="row">
+//         <div class="col col-xs-12">
+//             <div class="col-md-12 mt-2">
+//                 <div class="gamecontainer col-md-12">
+//                     <div>
+//                         <span class="status">
+//                         @status
+//                         </span>
+//                     </div>
+//                     <div>
+//                         <span id="field1" class="grid col-xs-1">
+//                         @grid.slice(0, 1)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(1, 6)
+//                         </span>
+//                         <span id="field2" class="grid col-xs-1">
+//                         @grid.slice(6, 7)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(7, 12)
+//                         </span>
+//                         <span id="field3" class="grid col-xs-1">
+//                         @grid.slice(12, 13)
+//                         </span>
+//                     </div>
+//                     <div>
+//                         <span class="col-xs-1">
+//                         @grid.slice(14, 16)
+//                         </span>
+//                         <span id="field4" class="grid col-xs-1">
+//                         @grid.slice(16, 17)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(17, 20)
+//                         </span>
+//                         <span id="field5" class="grid col-xs-1">
+//                         @grid.slice(20, 21)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(21, 24)
+//                         </span>
+//                         <span id="field6" class="grid col-xs-1">
+//                         @grid.slice(24, 25)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(25, 27)
+//                         </span>
+//                     </div>
+//                     <div>
+//                         <span class="col-xs-1">
+//                         @grid.slice(28, 32)
+//                         </span>
+//                         <span id="field7" class="grid col-xs-1">
+//                         @grid.slice(32, 33)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(33, 34)
+//                         </span>
+//                         <span id="field8" class="grid col-xs-1">
+//                         @grid.slice(34, 35)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(35, 36)
+//                         </span>
+//                         <span id="field9" class="grid col-xs-1">
+//                         @grid.slice(36, 37)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(37, 41)
+//                         </span>
+//                     </div>
+//                     <div>
+//                         <span class="grid row_middel">
+//                             <span id="field10" class="grid col-xs-1">
+//                             @grid.slice(42, 43)
+//                             </span>
+//                             <span class="col-xs-1">
+//                             @grid.slice(43, 44)
+//                             </span>
+//                             <span id="field11" class="grid col-xs-1">
+//                             @grid.slice(44, 45)
+//                             </span>
+//                             <span class="col-xs-1">
+//                             @grid.slice(45, 46)
+//                             </span>
+//                             <span id="field12" class="grid col-xs-1">
+//                             @grid.slice(46, 47)
+//                             </span> &nbsp;
+//                             <span id="field13" class="grid col-xs-1">
+//                             @grid.slice(50, 51)
+//                             </span>
+//                             <span class="col-xs-1">
+//                             @grid.slice(51, 52)
+//                             </span>
+//                             <span id="field14" class="grid col-xs-1">
+//                             @grid.slice(52, 53)
+//                             </span>
+//                             <span class="col-xs-1">
+//                             @grid.slice(53, 54)
+//                             </span>
+//                             <span id="field15" class="grid col-xs-1">
+//                             @grid.slice(54, 55)
+//                             </span>
+//                         </span>
+//                     </div>
+//                     <div>
+//                         <span class="col-xs-1">
+//                         @grid.slice(56, 60)
+//                         </span>
+//                         <span id="field16" class="grid col-xs-1">
+//                         @grid.slice(60, 61)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(61, 62)
+//                         </span>
+//                         <span id="field17" class="grid col-xs-1">
+//                         @grid.slice(62, 63)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(63, 64)
+//                         </span>
+//                         <span id="field18" class="grid col-xs-1">
+//                         @grid.slice(64, 65)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(65, 69)
+//                         </span>
+//                     </div>
+//                     <div>
+//                         <span class="col-xs-1">
+//                         @grid.slice(70, 72)
+//                         </span>
+//                         <span id="field19" class="grid col-xs-1">
+//                         @grid.slice(72, 73)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(73, 76)
+//                         </span>
+//                         <span id="field20" class="grid col-xs-1">
+//                         @grid.slice(76, 77)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(77, 80)
+//                         </span>
+//                         <span id="field21" class="grid col-xs-1">
+//                         @grid.slice(80, 81)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(81, 83)
+//                         </span>
+//                     </div>
+//                     <div>
+//                         <span id="field22" class="grid col-xs-1">
+//                         @grid.slice(84, 85)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(85, 90)
+//                         </span>
+//                         <span id="field23" class="grid col-xs-1">
+//                         @grid.slice(90, 91)
+//                         </span>
+//                         <span class="col-xs-1">
+//                         @grid.slice(91, 96)
+//                         </span>
+//                         <span id="field24" class="grid col-xs-1">
+//                         @grid.slice(96, 97)
+//                         </span>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>`
+// });

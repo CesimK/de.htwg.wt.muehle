@@ -9,57 +9,24 @@
             <nav-bar></nav-bar>
         </div>
         <canvas id="canvas"></canvas>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand mr-auto" href="/">HTWG WT Muehle</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">HOME<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/game">GAME</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Repositories
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="https://github.com/CesimK/de.htwg.se.muehle" target="_blank">
-                                SE Muehle</a>
-                            <a class="dropdown-item" href="https://github.com/CesimK/de.htwg.wt.muehle" target="_blank">
-                                WT Muehle</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <div class="textarea">
-        <p class="text-center">
-            <strong>
-                Welcome to our project 'Muehle (Nine Man Morris)' in the lecture 'Webtechnologies'! In order to start the game, click the button below.
-            </strong>
-        </p>
-    </div>
+        <div class="textarea">
+            <p class="text-center">
+                <strong>
+                    Welcome to our project 'Muehle (Nine Man Morris)' in the lecture 'Webtechnologies'! In order to start the game, click the button below.
+                </strong>
+            </p>
+        </div>
 
-    <div id="startgame">
-        <start-game></start-game>
+        <div id="startgame">
+            <start-game></start-game>
+        </div>
+        <div id="about">
+            <rules></rules>
+        </div>
+        <div class="row mt-5"></div>
+        <div id="very-useful-button">
+            <necessary-button></necessary-button>
+        </div>
+        <img class="imagesBackground" src=@routes.Assets.versioned("images/Website-Background-Web.jpg")>
     </div>
-    @* <div class="center">*@
-    @* <a href="/game" class="button3">Start Game</a>*@
-    @* </div>*@
-    <div id="about">
-        <rules></rules>
-    </div>
-    <div class="row mt-5"></div>
-    <div class="text-center d-inline-flex">
-        <a class="btn-slice" href="/yeet">
-            <div class="top"><span>Unnecessary Button</span></div>
-            <div class="bottom"><span>Unnecessary Button</span></div>
-        </a>
-    </div>
-    <img class="imagesBackground" src=@routes.Assets.versioned("images/Website-Background-Web.jpg")>
 }
