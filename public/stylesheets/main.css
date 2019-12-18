@@ -16,15 +16,6 @@ h2 {
     height: 100%;
 }
 
-.imagesBackground {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: fit-content;
-    z-index: -100;
-    opacity: 100%;
-}
-
 .main-header {
     color: black;
     background: lightgray;
