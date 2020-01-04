@@ -82,6 +82,11 @@ class MuehleController @Inject()(cc: ControllerComponents)(fileIO: FileIO) (impl
     }
   }
 
+  def notAvailable = Action {
+    implicit request: Request[AnyContent] =>
+      Ok(views.html.notAvailable())
+  }
+
   object MuehleWebsocketActorFactory {
     def create(out: ActorRef) = {
       Props(new MuehleWebsocketActor(out))
