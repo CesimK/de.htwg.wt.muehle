@@ -1,4 +1,9 @@
-@(controller: de.htwg.se.muehle.controller.controllerComponent.IController)
+@import play.api.i18n.Messages
+@import play.api.mvc.RequestHeader
+@import org.webjars.play.WebJarsUtil
+@import controllers.AssetsFinder
+
+@(controller: de.htwg.se.muehle.controller.controllerComponent.IController, user: models.User)(implicit request: RequestHeader, messages: Messages, webJarsUtil: WebJarsUtil, assets: AssetsFinder))
 
 @grid = @{
     controller.gridToString
@@ -8,7 +13,7 @@
     controller.status
 }
 
-@main("HTWG WT Muehle") {
+@main("HTWG WT Muehle", Some(user)) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
     <script src="@routes.Assets.versioned("components/game-app-component/game-app.component.js")" ></script>
     <script src="@routes.Assets.versioned("components/game-controls-component/controls.component.js")" ></script>

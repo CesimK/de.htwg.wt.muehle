@@ -3,71 +3,84 @@ package controllers
 import akka.actor.{Actor, ActorRef, ActorSystem, Props}
 import akka.stream.Materializer
 import javax.inject._
+import com.mohiva.play.silhouette.api.Silhouette
+import com.mohiva.play.silhouette.api.actions.SecuredRequest
 import play.api.mvc._
 import de.htwg.se.muehle.Muehle
 import de.htwg.se.muehle.model.fileIOImpl.jsonImpl.FileIO
 import de.htwg.se.muehle.util.{GameOver, GridChanged, InvalidTurn, TakeStone}
 import play.api.libs.streams.ActorFlow
+import org.webjars.play.WebJarsUtil
+import play.api.i18n.I18nSupport
+import utils.auth.DefaultEnv
 
+import scala.concurrent.Future
 import scala.swing.Reactor
 
 
 @Singleton
-class MuehleController @Inject()(cc: ControllerComponents)(fileIO: FileIO) (implicit system: ActorSystem, mat: Materializer) extends AbstractController(cc) {
+class MuehleController @Inject()(cc: ControllerComponents, silhouette: Silhouette[DefaultEnv])
+                                (fileIO: FileIO) (implicit
+                                                  webJarsUtil: WebJarsUtil,
+                                                  assets: AssetsFinder,
+                                                  system: ActorSystem,
+                                                  mat: Materializer)
+  extends AbstractController(cc) with I18nSupport {
+
   val gameController = Muehle.controller
   var fromJson = fileIO.controllerToJson(gameController)
   def muehleAsText =  gameController.status + "\n" + gameController.gridToString
 
-  def about= Action {
+  def about= silhouette.UnsecuredAction { implicit request: Request[AnyContent] =>
     Ok(views.html.index())
   }
 
-  def easterEgg= Action {
-    Ok(views.html.easterEgg())
+  def easterEgg= silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
+    Future.successful(Ok(views.html.easterEgg()))
   }
 
-  def muehle = Action {
-    Ok(views.html.muehle(gameController))
+  def muehle = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
+    Future.successful(Ok(views.html.muehle(gameController, request.identity)))
   }
 
-  def place(pos:Int) = Action {
+  def place(pos:Int) = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
     gameController.placeStone(pos)
     fromJson = fileIO.controllerToJson(gameController)
-    Ok(views.html.muehle(gameController))
+      Future.successful(Ok(views.html.muehle(gameController, request.identity)))
   }
 
-  def move(pos1:Int, pos2:Int) = Action {
+  def move(pos1:Int, pos2:Int) = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
     gameController.moveStone(pos1, pos2)
     fromJson = fileIO.controllerToJson(gameController)
-    Ok(views.html.muehle(gameController))
+    Future.successful(Ok(views.html.muehle(gameController, request.identity)))
   }
 
-  def remove(pos:Int) = Action {
+  def remove(pos:Int) = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
     gameController.removeStone(pos)
     fromJson = fileIO.controllerToJson(gameController)
-    Ok(views.html.muehle(gameController))
+    Future.successful(Ok(views.html.muehle(gameController, request.identity)))
   }
 
-  def newGame = Action {
+  def newGame = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
     gameController.newGame
     fromJson = fileIO.controllerToJson(gameController)
-    Ok(views.html.muehle(gameController))
+    Future.successful(Ok(views.html.muehle(gameController, request.identity)))
   }
 
-  def undo = Action {
+  def undo = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
     gameController.undo
     fromJson = fileIO.controllerToJson(gameController)
-    Ok(views.html.muehle(gameController))
+    Future.successful(Ok(views.html.muehle(gameController, request.identity)))
   }
 
-  def redo = Action {
+  def redo = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
     gameController.redo
     fromJson = fileIO.controllerToJson(gameController)
-    Ok(views.html.muehle(gameController))
+    Future.successful(Ok(views.html.muehle(gameController, request.identity)))
   }
 
-  def toJson = Action {
-    Ok(fromJson)
+  def toJson = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
+    Future.successful(Ok(fromJson))
   }
 
   def socket = WebSocket.accept[String,String] { request =>
