@@ -4,11 +4,9 @@
 
 # Controller for Sudoku
 
-GET        /about                        controllers.MuehleController.about
+GET        /about                   controllers.MuehleController.about
 
 GET        /game                    controllers.MuehleController.muehle
-
-#GET        /yeet                    controllers.MuehleController.easterEgg
 
 GET        /new                     controllers.MuehleController.newGame
 
@@ -45,7 +43,6 @@ POST        /password/change                 controllers.ChangePasswordControlle
 GET         /account/email/:email            controllers.ActivateAccountController.send(email: String)
 GET         /account/activate/:token         controllers.ActivateAccountController.activate(token: java.util.UUID)
 
-#GET        /registerServiceWorker.js       controllers.Assets.at(path="/public", file="javascripts/registerServiceWorker.js")
 GET        /manifest.json           controllers.Assets.at(path="/public", file="manifest.json")
 GET        /sw.js                   controllers.Assets.at(path="/public", file="javascripts/sw.js")
 GET        /service-worker.js       controllers.Assets.at(path="/public", file="javascripts/service-worker.js")
