@@ -44,16 +44,17 @@ class MuehleController @Inject() (
     }
   }
 
-  //  def easterEgg = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
-  //    authInfoRepository.find[GoogleTotpInfo](request.identity.loginInfo).map { totpInfoOpt =>
-  //      Ok(views.html.easterEgg(request.identity, totpInfoOpt))
-  //    }
-  //  }
+  def easterEgg= Action {
+    Ok(views.html.easterEgg())
+  }
 
-  def muehle = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
-    authInfoRepository.find[GoogleTotpInfo](request.identity.loginInfo).map { totpInfoOpt =>
-      Ok(views.html.muehle(gameController, request.identity, totpInfoOpt))
-    }
+  def getOffline = Action {
+    implicit request: Request[AnyContent] =>
+      Ok(views.html.offline())
+  }
+
+  def muehle = Action {
+    Ok(views.html.muehle(gameController))
   }
 
   def place(pos: Int) = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
