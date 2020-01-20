@@ -4,7 +4,7 @@
 
 # Controller for Sudoku
 
-GET        /about                   controllers.MuehleController.about
+GET        /about                   controllers.ApplicationController.index
 
 GET        /game                    controllers.MuehleController.muehle
 

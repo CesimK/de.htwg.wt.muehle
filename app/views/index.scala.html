@@ -10,7 +10,7 @@
 @(user: models.User, totpInfoOpt: Option[GoogleTotpInfo], totpDataOpt: Option[(Form[Data], GoogleTotpCredentials)] = None)(implicit request: RequestHeader,
         messages: Messages, webJarsUtil: WebJarsUtil, assets: AssetsFinder)
 
-@main("HTWG Muehle") {
+@main("HTWG Muehle", Some(user)) {
     <link rel="stylesheet" type="text/css" href='@assets.path("stylesheets/meuhle.css")' />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
     <script src="@assets.path("components/rules-component/rules.component.js")" ></script>

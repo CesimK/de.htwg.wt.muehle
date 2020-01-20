@@ -38,19 +38,18 @@ class MuehleController @Inject() (
   var fromJson = fileIO.controllerToJson(gameController)
   def muehleAsText = gameController.status + "\n" + gameController.gridToString
 
-  def about = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
-    authInfoRepository.find[GoogleTotpInfo](request.identity.loginInfo).map { totpInfoOpt =>
-      Ok(views.html.index(request.identity, totpInfoOpt))
-    }
-  }
+  //  def about = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
+  //    authInfoRepository.find[GoogleTotpInfo](request.identity.loginInfo).map { totpInfoOpt =>
+  //      Ok(views.html.index(request.identity, totpInfoOpt))
+  //    }
+  //  }
 
   //  def easterEgg= Action {
   //    Ok(views.html.easterEgg())
   //  }
 
-  def getOffline = Action {
-    implicit request: Request[AnyContent] =>
-      Ok(views.html.offline())
+  def getOffline = silhouette.UnsecuredAction.async { implicit request: Request[AnyContent] =>
+    Future.successful(Ok(views.html.offline()))
   }
 
   def muehle = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
@@ -91,8 +90,10 @@ class MuehleController @Inject() (
     }
   }
 
-  def toJson = Action {
-    Ok(fromJson)
+  def toJson = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
+    authInfoRepository.find[GoogleTotpInfo](request.identity.loginInfo).map { totpInfoOpt =>
+      Ok(fromJson)
+    }
   }
 
   object MuehleWebsocketActorFactory {

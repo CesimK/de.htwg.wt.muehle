@@ -38,7 +38,7 @@ class ApplicationController @Inject() (
    */
   def index = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
     authInfoRepository.find[GoogleTotpInfo](request.identity.loginInfo).map { totpInfoOpt =>
-      Ok(views.html.index(request.identity, totpInfoOpt))
+      Ok(views.html.about(request.identity, totpInfoOpt))
     }
   }
 

@@ -100,7 +100,7 @@ yahoo = Yahoo
 # Emails
 ##########
 
-email.from = Muehle Team <Cesim.Keskin@htwg-konstanz.de>
+email.from = Muehle Team <noreply.muehle@gmail.com>
 
 # Sign Up
 email.sign.up.subject = Confirm your email address
