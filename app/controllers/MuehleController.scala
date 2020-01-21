@@ -71,6 +71,10 @@ class MuehleController @Inject()(cc: ControllerComponents)(fileIO: FileIO) (impl
     Ok(views.html.muehle(gameController))
   }
 
+  def spaceInvader = Action {
+    Ok(views.html.spaceInvader())
+  }
+
   def toJson = Action {
     Ok(fromJson)
   }

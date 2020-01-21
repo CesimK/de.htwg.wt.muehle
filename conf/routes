@@ -10,6 +10,8 @@ GET        /game                    controllers.MuehleController.muehle
 
 GET        /yeet                    controllers.MuehleController.easterEgg
 
+GET        /space                   controllers.MuehleController.spaceInvader
+
 GET        /new                     controllers.MuehleController.newGame
 
 GET        /game/:field             controllers.MuehleController.place(field: Int)
