@@ -1,0 +1,30 @@
+@(controller: de.htwg.se.muehle.controller.controllerComponent.IController)
+
+@grid = @{
+    controller.gridToString
+}
+
+@status = @{
+    controller.status
+}
+
+@main("HTWG WT Muehle") {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+    <script src="@routes.Assets.versioned("components/game-app-component/game-app.component.js")" ></script>
+    <script src="@routes.Assets.versioned("components/game-controls-component/controls.component.js")" ></script>
+    <script src="@routes.Assets.versioned("components/navigation-bar-component/navigation-bar.component.js")" ></script>
+    <canvas id="canvas"></canvas>
+    <div class="main-header">
+        <div id="navigation-bar">
+            <nav-bar></nav-bar>
+        </div>
+    </div>
+    <div id="muehle-app-controls">
+        <game-controls></game-controls>
+    </div>
+
+    <div class="row mt-4"></div>
+    <div id="muehle-app">
+        <game></game>
+    </div>
+}

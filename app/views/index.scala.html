@@ -1,0 +1,27 @@
+@()
+
+@main("HTWG Muehle") {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+    <script src="@routes.Assets.versioned("components/rules-component/rules.component.js")" ></script>
+    <script src="@routes.Assets.versioned("components/navigation-bar-component/navigation-bar.component.js")" ></script>
+    <script src="@routes.Assets.versioned("components/start-game-component/start-game.component.js")" ></script>
+    <script src="@routes.Assets.versioned("components/easter-egg-component/easter-egg.component.js")" ></script>
+
+    <div class="main-header">
+        <div id="navigation-bar">
+            <nav-bar></nav-bar>
+        </div>
+        <canvas id="canvas"></canvas>
+        <div class="row mt-5"></div>
+        <div id="startgame">
+            <start-game></start-game>
+        </div>
+        <div id="about">
+            <rules></rules>
+        </div>
+        <div class="row mt-5"></div>
+        <div id="very-useful-button">
+            <necessary-button></necessary-button>
+        </div>
+    </div>
+}
