@@ -71,6 +71,10 @@ class MuehleController @Inject()(cc: ControllerComponents)(fileIO: FileIO) (impl
     Ok(views.html.muehle(gameController))
   }
 
+  def spaceInvader = Action {
+    Ok(views.html.spaceInvader())
+  }
+
   def toJson = Action {
     Ok(fromJson)
   }
@@ -80,6 +84,11 @@ class MuehleController @Inject()(cc: ControllerComponents)(fileIO: FileIO) (impl
       println("Connect recieved")
       MuehleWebsocketActorFactory.create(out)
     }
+  }
+
+  def notAvailable = Action {
+    implicit request: Request[AnyContent] =>
+      Ok(views.html.notAvailable())
   }
 
   object MuehleWebsocketActorFactory {
