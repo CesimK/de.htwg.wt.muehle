@@ -61,7 +61,7 @@ class TotpController @Inject() (
     val totpInfo = credentials.totpInfo
     val formData = TotpSetupForm.form.fill(TotpSetupForm.Data(totpInfo.sharedKey, totpInfo.scratchCodes, credentials.scratchCodesPlain))
     authInfoRepository.find[GoogleTotpInfo](request.identity.loginInfo).map { totpInfoOpt =>
-      Ok(views.html.about(user, totpInfoOpt, Some((formData, credentials))))
+      Ok(views.html.index(user, totpInfoOpt, Some((formData, credentials))))
     }
   }
 
@@ -83,7 +83,7 @@ class TotpController @Inject() (
     val user = request.identity
     TotpSetupForm.form.bindFromRequest.fold(
       form => authInfoRepository.find[GoogleTotpInfo](request.identity.loginInfo).map { totpInfoOpt =>
-        BadRequest(views.html.about(user, totpInfoOpt))
+        BadRequest(views.html.index(user, totpInfoOpt))
       },
       data => {
         totpProvider.authenticate(data.sharedKey, data.verificationCode).flatMap {
